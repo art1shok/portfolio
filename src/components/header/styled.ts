@@ -9,6 +9,18 @@ export const SHeader = styled.header`
   background-color: #010100;
 `;
 
+export const LogoWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const LoginButton = styled.button`
+  font-size: 20px;
+  line-height: 24px;
+
+  margin-left: 10px;
+`;
+
 export const Logo = styled.h1`
   font-size: 40px;
   line-height: 48px;

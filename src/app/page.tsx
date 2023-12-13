@@ -1,18 +1,13 @@
 "use client";
-import { useEffect } from "react";
-import { redirect } from "next/navigation";
+import { Provider as ReduxProvider } from "react-redux";
 
-import AuthentificatedLayout from "@/components/authentificatedLayout";
-import { isAuthenticated } from "@/utils/auth";
-import UnauthenticatedLayout from "@/components/unauthenticatedLayout";
+import { store } from "@/redux/store";
+import PageWrapper from "@/components/pageWrapper";
 
 export default function Home() {
-
-  return isAuthenticated ? (
-    <AuthentificatedLayout>
-
-    </AuthentificatedLayout>
-  ) : (
-    <UnauthenticatedLayout>Bye</UnauthenticatedLayout>
+  return (
+    <ReduxProvider store={store}>
+      <PageWrapper />
+    </ReduxProvider>
   );
 }

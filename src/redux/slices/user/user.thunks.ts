@@ -1,4 +1,9 @@
-// import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-// export const signUpThunk = createAsyncThunk('user/signUp', (payload) => {
-// });
+export const signInThunk = createAsyncThunk('user/signIn', (payload) => {
+  return payload;
+});
+
+export const signOutThunk = createAsyncThunk('user/signOut', (payload) => {
+  return payload;
+});

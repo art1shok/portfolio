@@ -1,17 +1,34 @@
-import { Logo, NavItem, NavLink, NavList, SHeader } from "./styled";
+import { useDispatch } from "react-redux";
+import {
+  LoginButton,
+  Logo,
+  LogoWrapper,
+  NavItem,
+  NavLink,
+  NavList,
+  SHeader,
+} from "./styled";
+import { setIsAuthenticated } from "@/redux/slices/user/user.slice";
 
 export default function Header() {
+  const dispatch = useDispatch();
+
   const navListData = [
     { title: "Info", href: "/info" },
     { title: "About Us", href: "/about-us" },
     { title: "Notes", href: "/notes" },
-    { title: "Login", href: "/login" },
-    { title: "Sign Up", href: "/sign-up" },
   ];
+
+  const handleLogin = () => {
+    dispatch(setIsAuthenticated(true))
+  };
 
   return (
     <SHeader>
-      <Logo>Y & P</Logo>
+      <LogoWrapper>
+        <Logo>Y & P</Logo>
+        <LoginButton onClick={handleLogin}>Login</LoginButton>
+      </LogoWrapper>
       <NavList>
         {navListData.map((item, idx) => (
           <NavItem key={idx}>

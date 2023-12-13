@@ -1,14 +1,22 @@
 "use client";
 
-import { Logo, NavItem, NavLink, NavList, SideBarWrapper } from "./styled";
+import { useDispatch } from "react-redux";
+import { LogOutButton, Logo, NavItem, NavLink, NavList, SideBarWrapper } from "./styled";
+import { setIsAuthenticated } from "@/redux/slices/user/user.slice";
 
 export default function SideBar() {
+  const dispatch = useDispatch();
+
   const navListData = [
     { title: "Profile", href: "/profile" },
     { title: "Courses", href: "/cources" },
     { title: "Notes", href: "/notes" },
   ];
-  
+
+  const handleLogOut = () => {
+    dispatch(setIsAuthenticated(false))
+  };
+
   return (
     <SideBarWrapper>
       <Logo>Y & P</Logo>
@@ -19,6 +27,7 @@ export default function SideBar() {
           </NavItem>
         ))}
       </NavList>
+      <LogOutButton onClick={handleLogOut}>Log Out</LogOutButton>
     </SideBarWrapper>
   );
 }

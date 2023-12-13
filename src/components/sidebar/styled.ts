@@ -8,6 +8,14 @@ export const SideBarWrapper = styled.nav`
   border-right: 1px solid #504c4c;
 `;
 
+
+export const LogOutButton = styled.button`
+  font-size: 20px;
+  line-height: 24px;
+
+  margin-left: 10px;
+`;
+
 export const Logo = styled.h1`
   font-size: 40px;
   line-height: 48px;
