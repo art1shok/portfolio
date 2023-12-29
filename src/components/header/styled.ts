@@ -5,6 +5,7 @@ export const SHeader = styled.header`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  height: 96px;
   padding: 10px 12px;
   background-color: #010100;
 `;
@@ -12,13 +13,7 @@ export const SHeader = styled.header`
 export const LogoWrapper = styled.div`
   display: flex;
   flex-direction: row;
-`;
-
-export const LoginButton = styled.button`
-  font-size: 20px;
-  line-height: 24px;
-
-  margin-left: 10px;
+  align-items: center;
 `;
 
 export const Logo = styled.h1`

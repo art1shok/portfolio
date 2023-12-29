@@ -3,7 +3,7 @@
 import Header from "../header";
 import { ContentWrapper, LayoutWrapper } from "./styled";
 
-export default function UnauthenticatedLayout({
+export default function Layout({
     children,
   }: {
     children: React.ReactNode;
